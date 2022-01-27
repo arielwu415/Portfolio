@@ -4,15 +4,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #eedada;
+    background-color: #fafbfc;;
+    // background-color: #eedada;
 }
 
 .main_container {
-    width: 40%;
-    height: 40vh;
+    width: 90%;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.welcome_msg {
+    width: 40%;
+    height: 40vh;
+    background-color: #fafbfc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
 }
