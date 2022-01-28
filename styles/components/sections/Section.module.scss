@@ -8,13 +8,21 @@
     // background-color: #eedada;
 }
 
-.main_container {
+.section_container {
     width: 90%;
+    height: 100vh;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+    }
 }
 
 .welcome_msg {
@@ -27,4 +35,6 @@
     align-items: center;
     justify-content: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1;
 }
+
