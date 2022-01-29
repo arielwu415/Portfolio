@@ -12,7 +12,7 @@ export default function Landing() {
     let close = useRef(null)
 
     useEffect(() => {
-        tl.fromTo(greeting, {y: 50, opacity: 0}, {duration: 0.7, y: 0, opacity: 1})
+        tl.fromTo(greeting, { y: 50, opacity: 0 }, { duration: 0.7, y: 0, opacity: 1 })
         // gsap.to(close, {
         //     scrollTrigger: {
         //         trigger: close,
@@ -49,12 +49,14 @@ export default function Landing() {
         <section className={styles.section}>
             <div className={styles.section_container}>
                 <div className={styles.welcome_msg} ref={el => greeting = el}>
-                    <h2>Hello, I'm Ariel Wu;</h2>
-                    <span> Computer Science Student & Illustrator.</span>
+                    <div className={styles.message}>
+                        <h2>Hello, I'm Ariel Wu;</h2>
+                        <span> Computer Science Student & Illustrator.</span>
+                    </div>
                 </div>
                 <img src="./gray.svg" className={styles.far} alt="" />
                 <img src="./brown.svg" className={styles.mid} alt="" />
-                <img src="./blue.svg" className={styles.close} alt="" ref={el => close = el}/>
+                <img src="./blue.svg" className={styles.close} alt="" ref={el => close = el} />
             </div>
         </section>
     )
