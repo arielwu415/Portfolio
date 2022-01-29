@@ -49,6 +49,11 @@ export default function Landing() {
         <section className={styles.section}>
             <div className={styles.section_container}>
                 <div className={styles.welcome_msg} ref={el => greeting = el}>
+                    <div className={styles.img_container}>
+                        <div>
+                            <img src="./character_bg.png" className={styles.figure} alt="" />
+                        </div>
+                    </div>
                     <div className={styles.message}>
                         <h2>Hello, I'm Ariel Wu;</h2>
                         <span> Computer Science Student & Illustrator.</span>
