@@ -6,9 +6,15 @@ export default function Project({ posts }) {
     return (
         <section className={styles.section}>
             <div className={styles.section_container}>
-                {posts.map((post, index) => (
-                    <h3>{post.frontmatter.title}</h3>
-                ))}
+                <div className={styles.project_container}>
+                    {posts.map((post, index) => (
+                        <div className={styles.post}>
+                            <h3>{post.frontmatter.title}</h3>
+                            <span>{post.frontmatter.semester}</span>
+                        </div>
+                    ))}
+                </div>
+
             </div>
         </section>
     )
