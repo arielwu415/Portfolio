@@ -1,5 +1,7 @@
 :root {
   --text-color: #1F1F1F;
+  --frame-color: #ebebeb;
+  --secondary-text-color: #949596;
 }
 
 html,
