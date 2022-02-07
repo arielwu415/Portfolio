@@ -1,0 +1,24 @@
+.section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(250,251,252);
+    background: linear-gradient(180deg, #fafbfc 0%, rgb(255, 255, 255) 100%);
+}
+
+.section_container {
+    width: 90%;
+    height: 100vh;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.section_title {
+    font-size: 36px;
+}
