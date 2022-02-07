@@ -8,22 +8,24 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function Project({ posts }) {
 
-    let eachPost = useRef(null)
+    let projects = useRef(null)
 
     useEffect(() => {
-        gsap.fromTo(eachPost, {
+        const projectPost = projects.children
+        gsap.fromTo(projectPost, {
             y: 50,
             opacity: 0
         }, {
             scrollTrigger: {
-                trigger: eachPost,
+                trigger: projects,
                 start: "top 75%",
                 toggleActions: "restart complete none reverse"
             },
             y: 0,
             opacity: 1,
             duration: 0.8,
-            ease: "power1.out"
+            ease: "power2.out",
+            stagger: 0.2
         })
     })
 
@@ -31,7 +33,7 @@ export default function Project({ posts }) {
         <section className={styles.section}>
             <div className={styles.section_container}>
                 <h1 className={styles.section_title}>Projects</h1>
-                <div className={styles.project_container} ref={el => eachPost = el}>
+                <div className={styles.project_container} ref={el => projects = el}>
                     {posts.map((post, index) => (
                         <Post post={post} />
                     ))}
