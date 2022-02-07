@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.scss'
 import Layout from '../components/layouts/Layout'
 import Landing from '../components/sections/landing/Landing'
 import Project from '../components/sections/project/Project'
+import About from '../components/sections/about/About'
 
 export default function Home({ projects }) {
 
@@ -19,8 +20,9 @@ export default function Home({ projects }) {
         </Head>
 
         <Landing />
-        <Project posts={projects}/>
-        
+        <About />
+        <Project posts={projects} />
+
 
       </div>
     </Layout>
