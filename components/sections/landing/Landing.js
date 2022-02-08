@@ -3,46 +3,54 @@ import styles from '../../../styles/components/sections/Landing.module.scss'
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-// gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Landing() {
 
-    const tl = gsap.timeline({ defaults: { ease: "power1.out" } })
+    const tl = gsap.timeline({ defaults: {} })
     let greeting = useRef(null)
     let close = useRef(null)
+    let mid = useRef(null)
+    let far = useRef(null)
 
     useEffect(() => {
-        tl.fromTo(greeting, { y: 50, opacity: 0 }, { duration: 0.7, y: 0, opacity: 1 })
-        // gsap.to(close, {
-        //     scrollTrigger: {
-        //         trigger: close,
-        //         start: "top top",
-        //         end: "bottom 100px",
-        //         scrub: 1,
-        //         markers: true
-        //     },
-        //     y: -100
-        // })
-        // gsap.to('.mid', {
-        //     scrollTrigger: {
-        //         trigger: '.mid',
-        //         start: 'top top',
-        //         end: 'bottom 100px',
-        //         scrub: true,
-        //         markers: true
-        //     },
-        //     y: -200
-        // })
-        // gsap.to('.far', {
-        //     scrollTrigger: {
-        //         trigger: '.far',
-        //         start: 'top top',
-        //         end: 'bottom 100px',
-        //         scrub: true,
-        //         markers: true
-        //     },
-        //     y: -300
-        // })
+        tl.fromTo(greeting, { y: 50, opacity: 0 }, { duration: 0.7, y: 0, opacity: 1, ease: "power1.out" })
+        gsap.fromTo(close, {
+            y: 0
+        }, {
+            scrollTrigger: {
+                trigger: close,
+                start: "top top",
+                scrub: 1,
+            },
+            y: -50,
+            opacity: 0.3,
+            ease: "power3.out",
+        })
+        gsap.fromTo(mid, {
+            y: 0
+        }, {
+            scrollTrigger: {
+                trigger: mid,
+                start: 'top top',
+                scrub: 1,
+            },
+            y: -100,
+            opacity: 0.3,
+            ease: "power3.out",
+        })
+        gsap.fromTo(far, {
+            y: 0
+        }, {
+            scrollTrigger: {
+                trigger: '.far',
+                start: 'top top',
+                scrub: 1,
+            },
+            y: -150,
+            opacity: 0.3,
+            ease: "power3.out",
+        })
     }, [])
 
     return (
@@ -59,8 +67,8 @@ export default function Landing() {
                         <span> Computer Science Student & Illustrator.</span>
                     </div>
                 </div>
-                <img src="./gray.svg" className={styles.far} alt="" />
-                <img src="./brown.svg" className={styles.mid} alt="" />
+                <img src="./gray.svg" className={styles.far} alt="" ref={el => far = el} />
+                <img src="./brown.svg" className={styles.mid} alt="" ref={el => mid = el} />
                 <img src="./blue.svg" className={styles.close} alt="" ref={el => close = el} />
             </div>
         </section>
