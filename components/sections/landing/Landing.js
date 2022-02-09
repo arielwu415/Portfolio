@@ -67,9 +67,9 @@ export default function Landing() {
                         <span> Computer Science Student & Illustrator.</span>
                     </div>
                 </div>
-                <img src="./gray.svg" className={styles.far} alt="" ref={el => far = el} />
-                <img src="./brown.svg" className={styles.mid} alt="" ref={el => mid = el} />
-                <img src="./blue.svg" className={styles.close} alt="" ref={el => close = el} />
+                <img src="./landing/gray-1.svg" className={styles.far} alt="" ref={el => far = el} />
+                <img src="./landing/brown-1.svg" className={styles.mid} alt="" ref={el => mid = el} />
+                <img src="./landing/blue-1.svg" className={styles.close} alt="" ref={el => close = el} />
             </div>
         </section>
     )
