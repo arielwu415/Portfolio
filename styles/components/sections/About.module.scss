@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(250,251,252);
-    background: linear-gradient(180deg, #fafbfc 0%, rgb(255, 255, 255) 100%);
+    // background: rgb(250,251,252);
+    // background: linear-gradient(180deg, #fafbfc 0%, rgb(255, 255, 255) 100%);
 }
 
 .section_container {
@@ -21,4 +21,72 @@
 
 .section_title {
     font-size: 36px;
+}
+
+.container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.right {
+    width: 45%;
+    img {
+        object-fit: hidden;
+    }
+}
+
+.intro {
+    width: 90%;
+    height: 2em;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafbfc;
+    color: #39393a;
+    font-size: 1.01em;
+    border-radius: 10px;
+}
+
+.about_item {
+    margin-top: 15px;
+    // h3 span{
+    //     border-bottom: 3px solid#f7d158;
+    // }
+}
+
+.item_content {
+    margin-top: 5px;
+}
+
+.school {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.school_year {
+    font-size: 0.75em;
+    color: var(--secondary-text-color);
+}
+
+.bio {
+    display: flex;
+    flex-direction: row;
+    .year {
+        margin-right: 10px;
+    }
 }
