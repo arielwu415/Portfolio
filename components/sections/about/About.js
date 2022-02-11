@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from '../../../styles/components/sections/About.module.scss'
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
-export default function About() {
+gsap.registerPlugin(ScrollTrigger)
+
+export default function About({ language }) {
+
+    let section = useRef(null)
+
+    useEffect(() => {
+        gsap.fromTo(section, {
+            y: 0
+        }, {
+            scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                scrub: true,
+            },
+            y: -300,
+            ease: "linear"
+        })
+    })
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={el => section = el}>
             <div className={styles.section_container}>
                 <div className={styles.container}>
                     <div className={styles.left}>
@@ -56,7 +76,12 @@ export default function About() {
                             <div className={styles.about_item}>
                                 <h3><span>Languages</span></h3>
                                 <div className={styles.item_content}>
-                                    
+                                    {language.map(l =>(
+                                        <div className={styles.language}>
+                                            <div>{l.frontmatter.name}</div>
+                                            <div className={styles.level}>{l.frontmatter.level}</div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                             <div className={styles.about_item}>
