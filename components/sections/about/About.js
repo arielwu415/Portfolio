@@ -5,8 +5,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
 import Education from './about components/Education'
 import Bio from './about components/Bio'
-import Hobby from './about components/Hobby'
+import Interest from './about components/Interest'
 import Language from './about components/Language'
+import Technology from './about components/Technology'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,41 +16,43 @@ export default function About({ language }) {
     let section = useRef(null)
 
     useEffect(() => {
-        gsap.fromTo(section, {
-            y: 0
-        }, {
-            scrollTrigger: {
-                trigger: section,
-                start: "top bottom",
-                scrub: true,
-            },
-            y: -300,
-            ease: "linear"
-        })
+        // gsap.fromTo(section, {
+        //     y: 0
+        // }, {
+        //     scrollTrigger: {
+        //         trigger: section,
+        //         start: "top bottom",
+        //         // end: "bottom center",
+        //         scrub: true,
+        //     },
+        //     y: -500,
+        //     ease: "linear",
+        // })
     })
     return (
         <section className={styles.section} ref={el => section = el}>
             <div className={styles.section_container}>
                 <div className={styles.container}>
                     {/*Left elements*/}
-                    <div className={styles.left}>
+                    <div className={styles.content}>
                         <h1 className={styles.section_title}>About Me</h1>
-                        <div className={styles.content}>
-                            <div className={styles.intro}>
-                                <code>Hi, my name is Ariel Wu. I'm from Taiwan, based in LA.<br /></code>
-                            </div>
+                        <div className={styles.intro}>
+                            <code>Hi, my name is Ariel Wu. I'm from Taiwan, based in LA.<br /></code>
+                        </div>
+                        <div className={styles.grid}>
 
                             <Education />
-                            <Bio />
                             <Language language={language} />
-                            <Hobby />
-                            
+                            <Bio />
+                            <Technology />
+                            <Interest />
+
                         </div>
                     </div>
                     {/*Right elements*/}
-                    <div className={styles.right}>
-                        <img src="./character_bg.png" height="500" className={styles.figure} alt="" />
-                    </div>
+                    {/* <div className={styles.right}>
+                        <img src="./toonme.jpg" height="500" className={styles.figure} alt="" />
+                    </div> */}
                 </div>
             </div>
         </section>
