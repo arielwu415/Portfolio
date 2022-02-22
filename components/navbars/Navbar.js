@@ -7,14 +7,20 @@ export default function Navbar() {
         <header>
             <nav className={styles.nav}>
                 <div className={styles.nav_elements}>
-                    <div className={styles.title}>Ariel Wu.</div>
+                    <div className={styles.title}>
+                        <Link href={{ pathname: "/" }}>
+                            Ariel Wu.
+                        </Link>
+                    </div>
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
                             <li>
                                 About
                             </li>
                             <li>
-                                Projects
+                                <Link href={{ pathname: "/project" }}>
+                                    Projects
+                                </Link>
                             </li>
                             <li>
                                 GitHub
@@ -22,7 +28,7 @@ export default function Navbar() {
                             <li>
                                 Contact
                             </li>
-                            
+
                         </ul>
                     </div>
                 </div>
