@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Quicksand&display=swap');
 
 :root {
   --text-color: #1F1F1F;
@@ -16,6 +16,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Quicksand', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
 a {
