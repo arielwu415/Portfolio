@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Head from 'next/head'
-// import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss'
 
 import Layout from '../components/layouts/Layout'
 import Landing from '../components/sections/landing/Landing'
