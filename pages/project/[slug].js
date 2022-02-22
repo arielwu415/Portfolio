@@ -4,7 +4,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
-import styles from '../../styles/Home.module.scss'
+// import styles from '../../styles/Home.module.scss'
 import Layout from '../../components/layouts/Layout'
 
 export default function ProjectPage({
