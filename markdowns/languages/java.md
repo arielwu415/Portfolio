@@ -1,4 +1,5 @@
 ---
 name: 'Java'
-level: 'Proficient'
+level: 'Advanced'
+percentage: 0.8
 ---

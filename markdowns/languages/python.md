@@ -1,4 +1,5 @@
 ---
 name: 'Python'
-level: 'Advanced'
+level: 'Upper Intermediate'
+percentage: 0.75
 ---
