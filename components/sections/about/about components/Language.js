@@ -3,7 +3,7 @@ import styles from '../../../../styles/components/sections/About.module.scss'
 
 export default function Language({ language }) {
     return (
-        <div className={styles.about_item}>
+        <div className={styles.about_component} id={styles.language}>
             <h3><span>Languages</span></h3>
             <div className={styles.item_content}>
                 {language.map(l => (

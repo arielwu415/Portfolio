@@ -3,7 +3,7 @@ import styles from '../../../../styles/components/sections/About.module.scss'
 
 export default function Bio() {
     return (
-        <div className={styles.about_item}>
+        <div className={styles.about_component} id={styles.bio}>
             <h3><span>Bio</span></h3>
             <div className={styles.item_content}>
                 <div className={styles.bio}>

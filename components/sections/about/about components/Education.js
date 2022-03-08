@@ -3,7 +3,7 @@ import styles from '../../../../styles/components/sections/About.module.scss'
 
 export default function Education() {
     return (
-        <div className={styles.about_item}>
+        <div className={styles.about_component} id={styles.education}>
             <h3><span>Education</span></h3>
             <div className={styles.item_content}>
                 <div className={styles.school}>
