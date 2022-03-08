@@ -15,8 +15,7 @@ export default function Bio() {
                 <div className={styles.bio}>
                     <div className={styles.year}>2015</div>
                     <div>
-                        Studied in National Taipei University of Education. <br />
-                        Major in Digital Technology Design.
+                        Major in Digital Technology Design at National Taipei University of Education.
                     </div>
                 </div>
                 <div className={styles.bio}>
@@ -26,7 +25,7 @@ export default function Bio() {
                     </div>
                 </div>
                 <div className={styles.bio}>
-                    <div className={styles.year}>2020 - Present</div>
+                    <div className={styles.year}>2020 - Now</div>
                     <div>Studying computer science at Cal Poly Pomona.</div>
                 </div>
             </div>

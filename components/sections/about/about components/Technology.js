@@ -3,7 +3,7 @@ import styles from '../../../../styles/components/sections/About.module.scss'
 
 export default function Technology() {
 
-    var tools = ["GitHub", "Firebase", "JDBC", "PostgreSQL", "MS Access"]
+    var tools = ["GitHub", "Firebase", "JDBC", "PostgreSQL", "MS Access", "AWS"]
     var frameworks = ["React", "Next.js", "GSAP"]
     var multimedias = ["Figma", "Illustrator", "Photoshop", "Procreate", "SAI", "Premiere Pro"]
 
@@ -27,7 +27,7 @@ export default function Technology() {
                         </div>
                     ))}
                 </div>
-                <h4>Multimedia</h4>
+                <h4>Design</h4>
                 <div>
                     {multimedias.map(multimedia => (
                         <div className={styles.item}>

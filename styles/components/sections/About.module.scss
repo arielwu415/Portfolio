@@ -60,22 +60,21 @@
     // background-color: var(--bright-gray);
     opacity: 0.75;
     color: #39393a;
-    font-size: 1.01em;
+    font-size: 1.05em;
     border-radius: 10px;
 }
 
 .grid {
+    margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     grid-template-rows: auto;
     gap: 20px 20px;
     grid-template-areas: 
     "edu    lang"
     "bio    lang"
-    "bio    tech"
-    "ilove  tech"
-    "ilove  tech"
-    ".      tech";
+    "ilove  lang"
+    ".  tech"
 }
 
 #education {
@@ -106,7 +105,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
 }
 
 .school_year {
@@ -122,8 +121,11 @@
 
 // Language
 .language {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    margin-top: 9px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .level {
@@ -140,18 +142,22 @@
     border-radius: 10%;
 }
 
-@media only screen and (max-width: 1095px){
+@media only screen and (max-width: 986px){
     .content{
         width: 768px;
     }
     .grid {
         grid-template-columns: 1fr;
-            grid-template-areas:
-            "edu"
-            "bio"
-            "lang"
-            "tech"
-            "ilove";
+        grid-template-areas:
+        "edu"
+        "bio"
+        "ilove"
+        "lang"
+        "tech";
+        gap: 30px;
+    }
+    .section {
+        height: 140vh;
     }
 }
 
@@ -161,11 +167,14 @@
     }
     .grid {
         grid-template-columns: 1fr;
-            grid-template-areas:
-            "edu"
-            "bio"
-            "lang"
-            "tech"
-            "ilove";
+        grid-template-areas:
+        "edu"
+        "bio"
+        "ilove"
+        "lang"
+        "tech";
+    }
+    .section {
+        height: 160vh;
     }
 }
