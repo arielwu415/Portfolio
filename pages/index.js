@@ -20,7 +20,7 @@ export default function Home({ projects, languages }) {
         </Head>
 
         <Landing />
-        <About language={languages}/>
+        <About language={languages} />
         <Project posts={projects} />
 
 
@@ -31,7 +31,7 @@ export default function Home({ projects, languages }) {
 
 // Reference: https://www.youtube.com/watch?v=MrjeefD8sac&ab_channel=TraversyMedia
 export async function getStaticProps() {
-  
+
   // Get files from the 'markdowns/projects' directory
   const projectFiles = fs.readdirSync(path.join('markdowns/projects'))
 
@@ -73,7 +73,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects,
-      languages
+      languages: languages.sort((a,b) => b.frontmatter.percentage - a.frontmatter.percentage)
     }
   }
 }
