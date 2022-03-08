@@ -21,7 +21,7 @@
 
 .section_title {
     font-size: 36px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -35,7 +35,7 @@
 }
 
 .content {
-    width: 50%;
+    width: 1050px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +52,7 @@
 .intro {
     width: 100%;
     height: 2.5em;
-    margin-top: 10px;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,21 +68,40 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    column-gap: 15px;
-    grid-area: 
+    gap: 20px 20px;
+    grid-template-areas: 
     "edu    lang"
     "bio    lang"
-    "ilove  tech";
+    "bio    tech"
+    "ilove  tech"
+    "ilove  tech"
+    ".      tech";
 }
 
-.about_item {
-    margin-top: 20px;
+#education {
+    grid-area: edu;
+}
+#bio {
+    grid-area: bio;
+}
+#interest{
+    grid-area: ilove;
+}
+#language {
+    grid-area: lang;
+}
+#technology {
+    grid-area: tech;
+    h4 {
+        margin: 5px 0 3px 0;
+    }
 }
 
 .item_content {
     margin-top: 5px;
 }
 
+// Education
 .school {
     display: flex;
     flex-direction: row;
@@ -95,11 +114,13 @@
     color: var(--secondary-text-color);
 }
 
+// Bio
 .bio {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
+// Language
 .language {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -108,4 +129,43 @@
 .level {
     font-size: 0.8em;
     color: var(--secondary-text-color);
+}
+
+// Technology
+.item {
+    display: inline-block;
+    padding: 5px;
+    margin: 3px 5px 3px 0;
+    border: var(--frame-color) 1px solid;
+    border-radius: 10%;
+}
+
+@media only screen and (max-width: 1095px){
+    .content{
+        width: 768px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+            grid-template-areas:
+            "edu"
+            "bio"
+            "lang"
+            "tech"
+            "ilove";
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .content{
+        width: 300px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+            grid-template-areas:
+            "edu"
+            "bio"
+            "lang"
+            "tech"
+            "ilove";
+    }
 }
