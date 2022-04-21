@@ -4,7 +4,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Link from 'next/link'
-import styles from '../../styles/Home.module.scss'
+import styles from '../../styles/Projects.module.scss'
 import Layout from '../../components/layouts/Layout'
 
 export default function ProjectPage({
@@ -16,13 +16,13 @@ export default function ProjectPage({
     return (
         <Layout>
             <div className={styles.container}>
-                <Link href='/'>
-                    <a className={styles.back_button}>Go Back</a>
-                </Link>
                 <div className={styles.content}>
+                    <Link href='/project'>
+                        <a className={styles.back_button}>Go Back</a>
+                    </Link>
+                    <img className={styles.cover_img} src={cover_image} alt='' />
                     <h1>{title}</h1>
                     <span>{semester}</span>
-                    <img src={cover_image} alt='' />
                     <div className={styles.post_body}>
                         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
                     </div>

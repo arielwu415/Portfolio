@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import Link from 'next/link';
 import Post from './Post'
 import styles from '../../../styles/components/sections/Project.module.scss'
 import { gsap } from "gsap/dist/gsap";
@@ -38,7 +39,11 @@ export default function Project({ posts }) {
                         <Post post={post} />
                     ))}
                 </div>
-
+                <div className={styles.see_more_button}>
+                    <Link href={{ pathname: "/project" }}>
+                        {'>> See All Projects'}
+                    </Link>
+                </div>
             </div>
         </section>
     )
