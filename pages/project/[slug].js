@@ -3,12 +3,13 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import Link from 'next/link'
-import styles from '../../styles/Projects.module.scss'
+import styles from '../../styles/ProjectPage.module.scss'
 import Layout from '../../components/layouts/Layout'
 
+import { Button } from '../../components/assets/Button'
+
 export default function ProjectPage({
-    frontmatter: { title, semester, cover_image },
+    frontmatter: { title, semester, cover_image, link, note },
     slug,
     content
 }) {
@@ -16,18 +17,31 @@ export default function ProjectPage({
     return (
         <Layout>
             <div className={styles.container}>
+
                 <div className={styles.content}>
-                    <Link href='/project'>
-                        <a className={styles.back_button}>Go Back</a>
-                    </Link>
                     <img className={styles.cover_img} src={cover_image} alt='' />
-                    <h1>{title}</h1>
-                    <span>{semester}</span>
+
+                    <div className={styles.title}>
+                        <h1>{title}</h1>
+                        <span className={styles.secondary_text}>{semester}</span>
+                    </div>
+
                     <div className={styles.post_body}>
                         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+                        <div className={styles.project_link}>
+                            <span>Project Link: </span>
+                            <a href={link}>{link}</a>
+                        </div>
+                        <div className={styles.note}>
+                            <span className={styles.secondary_text}>{note}</span>
+                        </div>
+                    </div>
+                    <div className={styles.button}>
+                        <Button text="<< Go Back to All Projects" background_color="var(--major-blue)" color="var(--bright-gray)"/>
                     </div>
                 </div>
             </div>
+
         </Layout>
 
     )
