@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Level.module.scss'
+import styles from './styles/Level.module.scss'
 
 export const Level = ({ percentage }) => {
     var width = percentage*100 + "%"
