@@ -4,15 +4,19 @@ import matter from 'gray-matter'
 import React, { useEffect, useRef } from 'react'
 import Post from '../../components/sections/project/Post'
 import Layout from '../../components/layouts/Layout'
+import { Button } from '../../components/assets/Button'
 import styles from '../../styles/Projects.module.scss'
 
 export default function ProjectPage({ projects }) {
     return (
         <Layout>
             <div className={styles.container}>
-                {projects.map((project, index) => (
-                    <Post post={project} />
-                ))}
+                <h1>All Projects</h1>
+                <div className={styles.project_container}>
+                    {projects.map((project, index) => (
+                        <Post post={project} />
+                    ))}
+                </div>
             </div>
         </Layout>
     )
