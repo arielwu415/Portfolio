@@ -5,3 +5,18 @@ $breakpoints: (
   "tablet": 768px,
   "desktop": 1024px,
 ) !default;
+
+.top {
+  position: fixed;
+  top: 90vh;
+  left: 95%;
+  width: 36px;
+  height: 36px;
+  border-radius: 3px;
+  background-color: var(--text-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

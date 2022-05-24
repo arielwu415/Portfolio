@@ -8,8 +8,16 @@ import Layout from '../components/layouts/Layout'
 import Landing from '../components/sections/landing/Landing'
 import Project from '../components/sections/project/Project'
 import About from '../components/sections/about/About'
+import { useRef } from 'react'
+
+const scrollTo = (ref) => window.scrollTo({ left: 0, top: ref.current, behavior: 'smooth' })
 
 export default function Home({ projects, languages }) {
+
+  const top = useRef(null)
+  const handleScroll = () => {
+    scrollTo(top)
+  }
 
   return (
     <Layout>
@@ -19,10 +27,13 @@ export default function Home({ projects, languages }) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Landing />
+        <Landing ref={el => top = el} />
         <About language={languages} />
         <Project posts={projects} />
 
+        <div className={styles.top} onClick={handleScroll}>
+          <span>▲</span>
+        </div>
 
       </div>
     </Layout>
@@ -73,7 +84,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects,
-      languages: languages.sort((a,b) => b.frontmatter.percentage - a.frontmatter.percentage)
+      languages: languages.sort((a, b) => b.frontmatter.percentage - a.frontmatter.percentage)
     }
   }
 }
