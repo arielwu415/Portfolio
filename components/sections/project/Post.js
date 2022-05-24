@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import styles from '../../../styles/components/sections/Project.module.scss'
+import styles from './Post.module.scss'
 
 export default function Post({ post }) {
 
