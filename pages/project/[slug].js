@@ -1,11 +1,13 @@
 import React from 'react'
+import Head from 'next/head'
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
+
 import styles from '../../styles/ProjectPage.module.scss'
 import Layout from '../../components/layouts/Layout'
-
 import { Button } from '../../components/assets/Button'
 
 export default function ProjectPage({
@@ -16,6 +18,10 @@ export default function ProjectPage({
 
     return (
         <Layout>
+            <Head>
+                <title>Ariel Wu | Projects | {title}</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={styles.container}>
 
                 <div className={styles.content}>
@@ -37,7 +43,7 @@ export default function ProjectPage({
                         </div>
                     </div>
                     <div className={styles.button}>
-                        <Button text="◀ Go Back to All Projects" background_color="var(--major-blue)" color="var(--bright-gray)"/>
+                        <Button text="◀ Go Back to All Projects" background_color="var(--major-blue)" color="var(--bright-gray)" />
                     </div>
                 </div>
             </div>

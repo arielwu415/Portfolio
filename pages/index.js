@@ -1,14 +1,16 @@
+import { useEffect, useRef } from 'react'
+import Head from 'next/head'
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 
 import Layout from '../components/layouts/Layout'
 import Landing from '../components/sections/landing/Landing'
 import Project from '../components/sections/project/Project'
 import About from '../components/sections/about/About'
-import { useEffect, useRef } from 'react'
+
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -43,7 +45,7 @@ export default function Home({ projects, languages }) {
     <Layout>
       <div className={styles.container}>
         <Head>
-          <title>Create Next App</title>
+          <title>Ariel Wu</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

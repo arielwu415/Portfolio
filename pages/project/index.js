@@ -1,15 +1,21 @@
+import React from 'react'
+import Head from 'next/head'
+
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import React, { useEffect, useRef } from 'react'
+
 import Post from '../../components/sections/project/Post'
 import Layout from '../../components/layouts/Layout'
-import { Button } from '../../components/assets/Button'
 import styles from '../../styles/Projects.module.scss'
 
 export default function ProjectPage({ projects }) {
     return (
         <Layout>
+            <Head>
+                <title>Ariel Wu | Projects</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={styles.container}>
                 <h1>All Projects</h1>
                 <div className={styles.project_container}>
