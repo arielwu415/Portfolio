@@ -23,7 +23,9 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li>
-                                GitHub
+                                <Link href="https://github.com/arielwu415">
+                                    GitHub
+                                </Link>
                             </li>
                             <li>
                                 Contact
