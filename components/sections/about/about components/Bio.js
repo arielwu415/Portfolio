@@ -21,12 +21,12 @@ export default function Bio() {
                 <div className={styles.bio}>
                     <div className={styles.year}>2017</div>
                     <div>
-                        Moved to the United States. Started studying at Mt. SAC.
+                        Moved to the United States. Studied at Mt. SAC.
                     </div>
                 </div>
                 <div className={styles.bio}>
                     <div className={styles.year}>2020 - Now</div>
-                    <div>Studying computer science at Cal Poly Pomona.</div>
+                    <div>Major in Computer Science at Cal Poly Pomona.</div>
                 </div>
             </div>
         </div>

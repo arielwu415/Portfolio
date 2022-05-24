@@ -115,8 +115,10 @@
 
 // Bio
 .bio {
+    margin: 5px 0px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
+    gap: 10px 15px;
 }
 
 // Language
