@@ -37,7 +37,7 @@ export default function ProjectPage({
                         </div>
                     </div>
                     <div className={styles.button}>
-                        <Button text="<< Go Back to All Projects" background_color="var(--major-blue)" color="var(--bright-gray)"/>
+                        <Button text="◀ Go Back to All Projects" background_color="var(--major-blue)" color="var(--bright-gray)"/>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,7 @@ export default function Project({ posts }) {
                 </div>
                 <div className={styles.see_more_button}>
                     <Link href={{ pathname: "/project" }}>
-                        {'>> See All Projects'}
+                        {'▶ See All Projects'}
                     </Link>
                 </div>
             </div>
