@@ -8,16 +8,36 @@ import Layout from '../components/layouts/Layout'
 import Landing from '../components/sections/landing/Landing'
 import Project from '../components/sections/project/Project'
 import About from '../components/sections/about/About'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const scrollTo = (ref) => window.scrollTo({ left: 0, top: ref.current, behavior: 'smooth' })
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Home({ projects, languages }) {
+
+  let arrow = useRef(null)
 
   const top = useRef(null)
   const handleScroll = () => {
     scrollTo(top)
   }
+
+  //https://greensock.com/docs/v3/Plugins/ScrollTrigger
+  useEffect(() => {
+    gsap.fromTo(arrow, {
+      opacity: 0
+    }, {
+      scrollTrigger: {
+        trigger: arrow,
+        start: "top center",
+        scrub: 1,
+      },
+      opacity: 1,
+      ease: "power3.out",
+    })
+  })
 
   return (
     <Layout>
@@ -31,7 +51,7 @@ export default function Home({ projects, languages }) {
         <About language={languages} />
         <Project posts={projects} />
 
-        <div className={styles.top} onClick={handleScroll}>
+        <div className={styles.top} onClick={handleScroll} ref={el => arrow = el}>
           <span>▲</span>
         </div>
 
