@@ -161,18 +161,15 @@
     }
 }
 
+@media only screen and (max-width: 986px) {
+    .section {
+        height: 180vh;
+    }
+}
+
 @media only screen and (max-width: 320px){
     .content{
         width: 300px;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "edu"
-        "bio"
-        "lang"
-        "tech"
-        "ilove";
     }
     .section {
         height: 200vh;

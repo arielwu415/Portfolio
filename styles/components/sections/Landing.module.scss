@@ -25,7 +25,7 @@
 }
 
 .welcome_msg {
-    width: 40%;
+    width: 510px;
     height: 45vh;
     background-color: #fafbfc;
     border-radius: 20px;
@@ -63,10 +63,28 @@
     margin: auto;
     z-index: 2;
     scale: 0.8;
-    opacity: 0;
+    opacity: 1;
     transition: 0.4s ease-in-out;
     &:hover {
         scale: 1;
-        opacity: 1;
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 1290px) {
+    .welcome_msg {
+        width: 420px;
+    }
+}
+
+@media only screen and (max-width: 986px) {
+    .welcome_msg {
+        width: 360px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .welcome_msg {
+        width: 320px;
     }
 }
