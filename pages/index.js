@@ -14,16 +14,28 @@ import About from '../components/sections/about/About'
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const scrollTo = (ref) => window.scrollTo({ left: 0, top: ref.current, behavior: 'smooth' })
+const scrollTo = (ref) => window.scrollTo({ left: 0, top: ref, behavior: 'smooth' })
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home({ projects, languages }) {
 
+  // Scroll to top button
   let arrow = useRef(null)
 
-  const top = useRef(null)
-  const handleScroll = () => {
-    scrollTo(top)
+  // Scroll to about
+  let aboutSection = useRef(null)
+  const scrollToAbout = () => {
+    let offset = aboutSection.getBoundingClientRect().top - 100
+    console.log(offset)
+    scrollTo(offset)
+  }
+
+  // Scroll to project
+  let projectSection = useRef(null)
+  const scrollToProject = () => {
+    let offset = projectSection.getBoundingClientRect().top - 40
+    console.log(offset)
+    scrollTo(offset)
   }
 
   //https://greensock.com/docs/v3/Plugins/ScrollTrigger
@@ -42,18 +54,20 @@ export default function Home({ projects, languages }) {
   })
 
   return (
-    <Layout>
+    <Layout scrollToAbout={scrollToAbout} scrollToProject={scrollToProject}>
       <div className={styles.container}>
         <Head>
           <title>Ariel Wu</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Landing ref={el => top = el} />
+        <Landing />
+        <div ref={el => aboutSection = el}></div>
         <About language={languages} />
+        <div ref={el => projectSection = el}></div>
         <Project posts={projects} />
 
-        <div className={styles.top} onClick={handleScroll} ref={el => arrow = el}>
+        <div className={styles.top} onClick={() => scrollTo(0)} ref={el => arrow = el}>
           <span>▲</span>
         </div>
 

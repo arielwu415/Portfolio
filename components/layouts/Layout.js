@@ -2,15 +2,14 @@ import React from 'react';
 import Navbar from '../navbars/Navbar'
 import Footer from '../footers/Footer'
 
-export default function Layout({children})
-{
-    return(
+export default function Layout({ children, scrollToAbout, scrollToProject }) {
+    return (
         <>
-            <Navbar/>
+            <Navbar scrollToAbout={scrollToAbout} scrollToProject={scrollToProject} />
             <main>
                 {children}
             </main>
-            <Footer/>
+            <Footer />
         </>
     )
 }

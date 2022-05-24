@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/components/navbars/Navbar.module.scss'
 
-export default function Navbar() {
+export default function Navbar({ scrollToAbout, scrollToProject }) {
+
+    const handleScrollToAbout = useCallback(() => {
+        scrollToAbout()
+    })
+    const handleScrollToProject = useCallback(() => {
+        scrollToProject()
+    })
+
     return (
         <header>
             <nav className={styles.nav}>
@@ -14,13 +22,11 @@ export default function Navbar() {
                     </div>
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
-                            <li>
+                            <li onClick={() => handleScrollToAbout()}>
                                 About
                             </li>
-                            <li>
-                                <Link href={{ pathname: "/project" }}>
+                            <li onClick={() => handleScrollToProject()}>
                                     Projects
-                                </Link>
                             </li>
                             <li>
                                 <Link href="https://github.com/arielwu415">
@@ -36,6 +42,6 @@ export default function Navbar() {
                 </div>
 
             </nav>
-        </header>
+        </header >
     )
 }
