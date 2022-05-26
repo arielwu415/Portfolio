@@ -1,8 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/components/navbars/Navbar.module.scss'
+import { Dropdown } from '../assets/Dropdown';
 
-export default function Navbar({ scrollToAbout, scrollToProject }) {
+export default function Navbar({ links, scrollToAbout, scrollToProject }) {
+
+    const [open, setOpen] = useState(false)
+    const handleDropdown = () => {
+        setOpen(op => {
+            return !op
+        })
+    }
 
     const handleScrollToAbout = useCallback(() => {
         scrollToAbout()
@@ -22,26 +30,30 @@ export default function Navbar({ scrollToAbout, scrollToProject }) {
                     </div>
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
-                            <li onClick={() => handleScrollToAbout()}>
-                                About
+                            <li className={styles.link_item} onClick={handleScrollToAbout}>
+                                <span>
+                                    About
+                                </span>
                             </li>
-                            <li onClick={() => handleScrollToProject()}>
+                            <li className={styles.link_item} onClick={handleScrollToProject}>
+                                <span>
                                     Projects
+                                </span>
                             </li>
-                            <li>
-                                <Link href="https://github.com/arielwu415">
-                                    GitHub
-                                </Link>
+                            <li className={styles.link_item} onClick={handleDropdown}>
+                                <span>
+                                    Links
+                                </span>
                             </li>
-                            <li>
-                                Contact
-                            </li>
-
                         </ul>
                     </div>
                 </div>
-
+                {
+                    open &&
+                    <Dropdown links={links} />
+                }
             </nav>
+
         </header >
     )
 }

@@ -17,7 +17,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const scrollTo = (ref) => window.scrollTo({ left: 0, top: ref, behavior: 'smooth' })
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Home({ projects, languages }) {
+export default function Home({ links, projects, languages }) {
 
   // Scroll to top button
   let arrow = useRef(null)
@@ -54,7 +54,7 @@ export default function Home({ projects, languages }) {
   })
 
   return (
-    <Layout scrollToAbout={scrollToAbout} scrollToProject={scrollToProject}>
+    <Layout links={links} scrollToAbout={scrollToAbout} scrollToProject={scrollToProject}>
       <div className={styles.container}>
         <Head>
           <title>Ariel Wu</title>
@@ -117,8 +117,28 @@ export async function getStaticProps() {
     }
   })
 
+  // Get files from the 'markdowns/links' directory
+  const linkFiles = fs.readdirSync(path.join('markdowns/links'))
+
+  const links = linkFiles.map(linksName => {
+    const slug = linksName.replace('.md', '')
+    // Get frontmatter
+    // what's in the .md file
+    const markdownWithMeta = fs.readFileSync(
+      path.join('markdowns/links', linksName),
+      'utf-8'
+    )
+    const { data: frontmatter } = matter(markdownWithMeta)
+
+    return {
+      slug,
+      frontmatter
+    }
+  })
+
   return {
     props: {
+      links,
       projects,
       languages: languages.sort((a, b) => b.frontmatter.percentage - a.frontmatter.percentage)
     }
