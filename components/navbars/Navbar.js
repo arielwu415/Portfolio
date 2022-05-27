@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/components/navbars/Navbar.module.scss'
 import { Dropdown } from '../assets/Dropdown';
@@ -50,7 +50,7 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                                     Projects
                                 </span>
                             </li>
-                            <li className={styles.link_item} onMouseOver={handleOpenDropdown} onClick={toggleDropdown}>
+                            <li className={styles.link_item} onMouseOver={handleOpenDropdown} onClick={handleOpenDropdown}>
                                 <span className={styles.span_item}>
                                     Links
                                 </span>

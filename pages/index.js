@@ -25,16 +25,14 @@ export default function Home({ links, projects, languages }) {
   // Scroll to about
   let aboutSection = useRef(null)
   const scrollToAbout = () => {
-    let offset = aboutSection.getBoundingClientRect().top - 100
-    console.log(offset)
+    let offset = aboutSection.getBoundingClientRect().top
     scrollTo(offset)
   }
 
   // Scroll to project
   let projectSection = useRef(null)
   const scrollToProject = () => {
-    let offset = projectSection.getBoundingClientRect().top - 40
-    console.log(offset)
+    let offset = projectSection.getBoundingClientRect().top
     scrollTo(offset)
   }
 
@@ -68,7 +66,7 @@ export default function Home({ links, projects, languages }) {
         <Project posts={projects} />
 
         <div className={styles.top} onClick={() => scrollTo(0)} ref={el => arrow = el}>
-          <span>▲</span>
+          <span>^</span>
         </div>
 
       </div>

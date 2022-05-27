@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import fs from 'fs'
 import path from 'path'
@@ -11,13 +12,22 @@ import Layout from '../../components/layouts/Layout'
 import { Button } from '../../components/assets/Button'
 
 export default function ProjectPage({
+    links,
     frontmatter: { title, semester, cover_image, link, note },
     slug,
     content
 }) {
+    const router = useRouter()
+
+    const handleClickAbout = () => {
+        router.push('/')
+    }
+    const handleClickProject = () => {
+        router.push('/project')
+    }
 
     return (
-        <Layout>
+        <Layout links={links} scrollToAbout={handleClickAbout} scrollToProject={handleClickProject}>
             <Head>
                 <title>Ariel Wu | Projects | {title}</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -73,9 +83,28 @@ export async function getStaticProps({ params: { slug } }) {
         slug + '.md'), 'utf-8')
 
     const { data: frontmatter, content } = matter(markdownWithMeta)
+    // Get files from the 'markdowns/links' directory
+    const linkFiles = fs.readdirSync(path.join('markdowns/links'))
+
+    const links = linkFiles.map(linksName => {
+        const slug = linksName.replace('.md', '')
+        // Get frontmatter
+        // what's in the .md file
+        const markdownWithMeta = fs.readFileSync(
+            path.join('markdowns/links', linksName),
+            'utf-8'
+        )
+        const { data: frontmatter } = matter(markdownWithMeta)
+
+        return {
+            slug,
+            frontmatter
+        }
+    })
 
     return {
         props: {
+            links,
             frontmatter,
             slug,
             content

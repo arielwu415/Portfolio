@@ -16,6 +16,7 @@ export const Dropdown = ({ links, closeDropdown }) => {
     }, [closeDropdown])
 
     useEffect(() => {
+        console.log(links)
         document.addEventListener('mousedown', handleCloseDropdown)
         return () => document.removeEventListener('mousedown', handleCloseDropdown)
     })
