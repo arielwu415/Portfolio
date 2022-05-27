@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/components/navbars/Navbar.module.scss'
 import { Dropdown } from '../assets/Dropdown';
@@ -6,8 +6,18 @@ import { Dropdown } from '../assets/Dropdown';
 export default function Navbar({ links, scrollToAbout, scrollToProject }) {
 
     const [open, setOpen] = useState(false)
-    const handleDropdown = () => {
+
+    const handleOpenDropdown = () => {
+        console.log("Dropdown menu open")
+        setOpen(true)
+    }
+    const handleCloseDropdown = () => {
+        console.log("Dropdown menu closed")
+        setOpen(false)
+    }
+    const toggleDropdown = () => {
         setOpen(op => {
+            console.log("Toggle " + !op)
             return !op
         })
     }
@@ -31,17 +41,17 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
                             <li className={styles.link_item} onClick={handleScrollToAbout}>
-                                <span>
+                                <span className={styles.span_item}>
                                     About
                                 </span>
                             </li>
                             <li className={styles.link_item} onClick={handleScrollToProject}>
-                                <span>
+                                <span className={styles.span_item}>
                                     Projects
                                 </span>
                             </li>
-                            <li className={styles.link_item} onClick={handleDropdown}>
-                                <span>
+                            <li className={styles.link_item} onMouseOver={handleOpenDropdown} onClick={toggleDropdown}>
+                                <span className={styles.span_item}>
                                     Links
                                 </span>
                             </li>
@@ -50,7 +60,7 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                 </div>
                 {
                     open &&
-                    <Dropdown links={links} />
+                    <Dropdown links={links} closeDropdown={handleCloseDropdown} />
                 }
             </nav>
 

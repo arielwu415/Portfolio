@@ -1,11 +1,27 @@
-import React from "react"
+import React, { useCallback, useRef, useEffect } from "react"
 import Link from 'next/link'
 import styles from "./styles/Dropdown.module.scss"
 
 
-export const Dropdown = ({ links }) => {
+export const Dropdown = ({ links, closeDropdown }) => {
+
+    let dropdownElement = useRef(null)
+
+    const handleCloseDropdown = useCallback(e => {
+        e.preventDefault()
+        // If the dropdown medu does not contain what you click
+        if (!dropdownElement.contains(e.target) && !e.target.className.includes("Navbar_span_item") && !e.target.className.includes("Navbar_nav")) {
+            closeDropdown()
+        }
+    }, [closeDropdown])
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleCloseDropdown)
+        return () => document.removeEventListener('mousedown', handleCloseDropdown)
+    })
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container} ref={el => dropdownElement = el}>
             <div className={styles.list}>
                 {links.map((link, index) => (
                     <div className={styles.list_item}>
