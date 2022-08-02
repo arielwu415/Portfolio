@@ -56,6 +56,8 @@ export default function Home({ links, projects, languages }) {
       <div className={styles.container}>
         <Head>
           <title>Ariel Wu</title>
+          <meta name="description" content="Ariel Wu is a CS student at Cal Poly Pomona who aims to become a full stack engineer.
+          This is her portfolio website showing all her educations, skills, technologies, and projects." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
