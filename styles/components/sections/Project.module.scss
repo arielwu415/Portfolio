@@ -31,6 +31,9 @@
     align-items: center;
     justify-content: center;
     gap: 36px;
+    :nth-child(n+5) {
+        display: none;
+    }
 }
 
 .see_more_button {
