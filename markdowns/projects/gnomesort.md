@@ -1,7 +1,7 @@
 ---
 title: 'Gnome Sorting Machine'
 semester: 'Fall 2021'
-excerpt: 'This is an online sorting machine using gnome algorithm'
+excerpt: 'This is an online sorting machine using gnome algorithm.'
 cover_image: 'gnomesort.png'
 link: 'https://arielwu415.github.io/Gnome-Sorting-Machine/'
 ---
