@@ -26,7 +26,7 @@ export default function Home({ links, projects, languages }) {
   let aboutSection = useRef(null)
   const scrollToAbout = () => {
     let offset = aboutSection.getBoundingClientRect().top
-    scrollTo(offset)
+    scrollTo(offset-80)
   }
 
   // Scroll to project
@@ -62,10 +62,10 @@ export default function Home({ links, projects, languages }) {
         </Head>
 
         <Landing />
-        <div ref={el => aboutSection = el}></div>
-        <About language={languages} />
         <div ref={el => projectSection = el}></div>
         <Project posts={projects} />
+        <div ref={el => aboutSection = el}></div>
+        <About language={languages} />
 
         <div className={styles.top} onClick={() => scrollTo(0)} ref={el => arrow = el}>
           <span>^</span>
