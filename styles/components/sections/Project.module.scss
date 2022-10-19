@@ -56,8 +56,6 @@
         :nth-child(n+4) {
             display: none;
         }
-        align-items: center;
-        justify-content: center;
     }
 }
 
@@ -83,14 +81,17 @@
 
 @media only screen and (max-width: 640px){
     .section {
-        height: 240vh;
+        height: 200vh;
     }
     .content{
         width: 500px;
     }
+    .section_container {
+        height: 200vh;
+    }
     .project_container {
         display: grid;
-        height: 240vh;
+        height: auto;
         grid-template-columns: 1fr;
         :nth-child(n+5) {
             display: none;
