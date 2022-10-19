@@ -25,14 +25,14 @@ export default function Home({ links, projects, languages }) {
   // Scroll to about
   let aboutSection = useRef(null)
   const scrollToAbout = () => {
-    let offset = aboutSection.getBoundingClientRect().top
-    scrollTo(offset-80)
+    let offset = aboutSection.offsetTop
+    scrollTo(offset - 80)
   }
 
   // Scroll to project
   let projectSection = useRef(null)
   const scrollToProject = () => {
-    let offset = projectSection.getBoundingClientRect().top
+    let offset = projectSection.offsetTop
     scrollTo(offset)
   }
 
