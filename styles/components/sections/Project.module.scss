@@ -43,6 +43,9 @@
 }
 
 @media only screen and (max-width: 1290px){
+    .section {
+        height: 100vh;
+    }
     .content{
         width: 768px;
     }
@@ -56,40 +59,38 @@
         align-items: center;
         justify-content: center;
     }
-    .section {
-        height: 100vh;
-    }
 }
 
 @media only screen and (max-width: 986px){
     .section {
-        height: 120vh;
+        height: 150vh;
     }
     .content {
         width: 500px;
     }
     .project_container {
         width: 300px;
-        height: 120vh;
+        height: 150vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
         :nth-child(n+6) {
             display: block;
         }
+        gap: 20px;
     }
 }
 
 
 @media only screen and (max-width: 640px){
     .section {
-        height: 160vh;
+        height: 200vh;
     }
     .content{
         width: 500px;
     }
     .project_container {
         display: grid;
-        height: 160vh;
+        height: 200vh;
         grid-template-columns: 1fr;
         :nth-child(n+5) {
             display: none;
