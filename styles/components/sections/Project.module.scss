@@ -83,14 +83,14 @@
 
 @media only screen and (max-width: 640px){
     .section {
-        height: 200vh;
+        height: 240vh;
     }
     .content{
         width: 500px;
     }
     .project_container {
         display: grid;
-        height: 200vh;
+        height: 240vh;
         grid-template-columns: 1fr;
         :nth-child(n+5) {
             display: none;
