@@ -62,38 +62,38 @@
 }
 
 @media only screen and (max-width: 986px){
-    .content{
+    .section {
+        height: 120vh;
+    }
+    .content {
         width: 500px;
     }
     .project_container {
         width: 300px;
-        height: 270vh;
+        height: 120vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        :nth-child(n+4) {
+        :nth-child(n+6) {
             display: block;
         }
-    }
-    .section {
-        height: 160vh;
     }
 }
 
 
 @media only screen and (max-width: 640px){
+    .section {
+        height: 160vh;
+    }
     .content{
         width: 500px;
     }
     .project_container {
-        height: 240vh;
         display: grid;
+        height: 160vh;
         grid-template-columns: 1fr;
-        :nth-child(n+4) {
-            display: block;
+        :nth-child(n+5) {
+            display: none;
         }
         gap: 20px;
-    }
-    .section {
-        height: 270vh;
     }
 }
