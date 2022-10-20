@@ -40,14 +40,14 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                     </div>
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
-                            <li className={styles.link_item} onClick={handleScrollToAbout}>
-                                <span className={styles.span_item}>
-                                    About
-                                </span>
-                            </li>
                             <li className={styles.link_item} onClick={handleScrollToProject}>
                                 <span className={styles.span_item}>
                                     Projects
+                                </span>
+                            </li>
+                            <li className={styles.link_item} onClick={handleScrollToAbout}>
+                                <span className={styles.span_item}>
+                                    About
                                 </span>
                             </li>
                             <li className={styles.link_item} onMouseOver={handleOpenDropdown} onClick={handleOpenDropdown}>
