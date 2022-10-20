@@ -1,7 +1,7 @@
 ---
 title: 'Billing and Payment System'
 semester: 'Spring 2021'
-excerpt: 'A simple app for tracking orders and showing overall costs of a manufactory.'
+excerpt: 'A simple app for tracking orders and showing overall costs of manufactoring.'
 cover_image: 'shamwow.png'
 ---
 
