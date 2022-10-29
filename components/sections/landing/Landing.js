@@ -59,7 +59,7 @@ export default function Landing() {
                 <div className={styles.welcome_msg} ref={el => greeting = el}>
                     <div className={styles.img_container}>
                         <div>
-                            <img src="./character_bg.png" className={styles.figure} alt="" />
+                            <img src="./landing/character_bg.png" className={styles.figure} alt="" />
                         </div>
                     </div>
                     <div className={styles.message}>
