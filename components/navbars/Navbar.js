@@ -24,9 +24,11 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
 
     const handleScrollToAbout = useCallback(() => {
         scrollToAbout()
+        handleCloseDropdown()
     })
     const handleScrollToProject = useCallback(() => {
         scrollToProject()
+        handleCloseDropdown()
     })
 
     return (
@@ -50,9 +52,18 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                                     About
                                 </span>
                             </li>
-                            <li className={styles.link_item} onMouseOver={handleOpenDropdown} onClick={handleOpenDropdown}>
+                            <li className={styles.link_item} onClick={handleOpenDropdown}>
                                 <span className={styles.span_item}>
                                     Links
+                                </span>
+                            </li>
+                            <li className={styles.link_item}>
+                                <span className={styles.span_item}>
+                                    <a
+                                        href="./pdf/resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                    Resume</a>
                                 </span>
                             </li>
                         </ul>
