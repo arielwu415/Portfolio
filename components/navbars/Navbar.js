@@ -31,6 +31,10 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
         handleCloseDropdown()
     })
 
+    const handleHamburgerDropDown = () =>{
+        
+    }
+
     return (
         <header>
             <nav className={styles.nav}>
@@ -40,6 +44,16 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                             Ariel Wu.
                         </Link>
                     </div>
+
+                    {/*Hamburger Menu*/}
+                    <div className={styles.hamburger}>
+                        <svg width="30" height="30" viewBox="0 0 75 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line id={styles.line1} y1="3.5" x2="75" y2="3.5" stroke="white" strokeWidth="5" />
+                            <line id={styles.line2} y1="28.5" x2="75" y2="28.5" stroke="white" strokeWidth="5" />
+                            <line id={styles.line3} y1="53.5" x2="75" y2="53.5" stroke="white" strokeWidth="5" />
+                        </svg>
+                    </div>
+
                     <div className={styles.right_elements}>
                         <ul className={styles.nav_links}>
                             <li className={styles.link_item} onClick={handleScrollToProject}>
@@ -63,7 +77,7 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                                         href="./pdf/resume.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer">
-                                    Resume</a>
+                                        Resume</a>
                                 </span>
                             </li>
                         </ul>
