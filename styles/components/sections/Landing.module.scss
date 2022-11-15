@@ -66,6 +66,7 @@
 }
 
 .figure {
+    position: absolute;
     max-width: 384px;
     max-height: 324px;
     margin: auto;
@@ -73,14 +74,16 @@
     scale: 0.8;
     opacity: 1;
     transition: 0.4s ease-in-out;
-    &:hover {
-        scale: 1;
-        opacity: 0;
-    }
+}
+
+.welcome_msg:hover .figure{
+    scale: 1;
+    opacity: 0;
 }
 
 .blob {
     position: absolute;
+    z-index: 0;
 }
 
 
