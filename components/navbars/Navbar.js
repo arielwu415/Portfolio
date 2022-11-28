@@ -74,7 +74,7 @@ export default function Navbar({ links, scrollToAbout, scrollToProject }) {
                             <li className={styles.link_item}>
                                 <span className={styles.span_item}>
                                     <a
-                                        href="./pdf/resume.pdf"
+                                        href="./pdf/Resume_WenChien_Wu.pdf"
                                         target="_blank"
                                         rel="noopener noreferrer">
                                         Resume</a>
