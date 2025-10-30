@@ -104,7 +104,7 @@ export default function Landing() {
                     </div>
                     <div className={styles.message}>
                         <h2>Hello, I'm Ariel Wu;</h2>
-                        <span> Computer Science Student & Illustrator.</span>
+                        <span> Web Developer & Marketing Specialist. </span>
                     </div>
                 </div>
                 <svg
